@@ -7,6 +7,7 @@
 //
 
 #import "InventoryAppDelegate.h"
+#import "ItemsViewController.h"
 
 @implementation InventoryAppDelegate
 
@@ -14,6 +15,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // Create a ItemsViewController
+    ItemsViewController *ivc = [[ItemsViewController alloc] init];
+    
+    // Place ItemsViewController's table view in the window heirarchy
+    [[self window] setRootViewController:ivc];
+    
+    // Release the ItemsViewController
+    [ivc release];
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
