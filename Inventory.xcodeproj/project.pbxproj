@@ -24,6 +24,7 @@
 		F8E4D5DB1431481E00F301CB /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4D5DA1431481E00F301CB /* ItemsViewController.m */; };
 		F8E4D5E31431513200F301CB /* Possession.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4D5E21431513200F301CB /* Possession.m */; };
 		F8E4D5E7143151C400F301CB /* PossessionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4D5E6143151C400F301CB /* PossessionStore.m */; };
+		F8E4D5E914351DDA00F301CB /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E4D5E814351DDA00F301CB /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,9 @@
 		F8E4D5DA1431481E00F301CB /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 		F8E4D5E11431513200F301CB /* Possession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Possession.h; sourceTree = "<group>"; };
 		F8E4D5E21431513200F301CB /* Possession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Possession.m; sourceTree = "<group>"; };
-		F8E4D5E5143151C400F301CB /* PossessionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PossessionStore.h; sourceTree = "<group>"; };
+		F8E4D5E5143151C400F301CB /* PossessionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PossessionStore.h; sourceTree = "<group>"; };
 		F8E4D5E6143151C400F301CB /* PossessionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PossessionStore.m; sourceTree = "<group>"; };
+		F8E4D5E814351DDA00F301CB /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		F8E4D5961431453E00F301CB = {
 			isa = PBXGroup;
 			children = (
+				F8E4D5EA14351DE200F301CB /* Views */,
 				F8E4D5DC1431482500F301CB /* Controllers */,
 				F8E4D5AB1431453E00F301CB /* Inventory */,
 				F8E4D5C71431453E00F301CB /* InventoryTests */,
@@ -180,6 +183,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		F8E4D5EA14351DE200F301CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F8E4D5E814351DDA00F301CB /* HeaderView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,6 +260,7 @@
 			files = (
 				F8E4D5B01431453E00F301CB /* InfoPlist.strings in Resources */,
 				F8E4D5B91431453E00F301CB /* MainWindow.xib in Resources */,
+				F8E4D5E914351DDA00F301CB /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

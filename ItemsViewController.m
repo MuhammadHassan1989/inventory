@@ -17,13 +17,51 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStyleGrouped];
     
-    if (self) {
-        for (int i = 0; i < 10; i++) {
-            [[PossessionStore defaultStore] createPossession];
-        }
-    }
-    
     return self;
+}
+
+- (UIView *)headerView
+{
+    // If we haven't loaded the headerView yet...
+    if (!headerView) {
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+    }
+    return headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [self headerView];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return [[self headerView] bounds].size.height;
+}
+
+- (IBAction)addNewPossession:(id)sender
+{
+    [[PossessionStore defaultStore] createPossession];
+    [[self tableView] reloadData];
+}
+
+- (IBAction)toggleEditingMode:(id)sender
+{
+    // If we are currently in editing mode...
+    if ([self isEditing]) {
+        //NSLog(@"%d", [self isEditing]);
+        // change text of button to inform user of state
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        
+        // turn off editing mode
+        [self setEditing:NO animated:YES];
+    } else {
+        // change text of button to inform user of state
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        
+        // turn off editing mode
+        [self setEditing:YES animated:YES];    
+    }
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -59,6 +97,26 @@
     
     return cell;
     
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // If table view is asking to commit a delete command...
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        PossessionStore *ps = [PossessionStore defaultStore];
+        NSArray *possessions = [ps allPossessions];
+        Possession *p = [possessions objectAtIndex:[indexPath row]];
+        [ps removePossession:p];
+        
+        // we also remove that row from the table view with an animation
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    [[PossessionStore defaultStore] movePossessionAtIndex:[fromIndexPath row] 
+                                                  toIndex:[toIndexPath row]];
 }
 
 @end

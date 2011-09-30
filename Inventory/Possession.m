@@ -2,17 +2,19 @@
 
 @implementation Possession
 
+@synthesize possessionName, serialNumber, valueInDollars, dateCreated;
+
 + (id)randomPossession
 {
     // Create an array of three adjectives
     NSArray *randomAdjectiveList = [NSArray arrayWithObjects:@"Fluffy", 
-                                                             @"Rusty",
-                                                             @"Shiny", nil];
+                                    @"Rusty",
+                                    @"Shiny", nil];
     
     // Create an array of three nouns
     NSArray *randomNounList = [NSArray arrayWithObjects: @"Bear",
-                                                         @"Spork", 
-                                                         @"Mac", nil];
+                               @"Spork", 
+                               @"Mac", nil];
     
     // Get the index of a random adjective/noun from the lists
     // Note: The % operator, called the modulo operator, gives
@@ -22,11 +24,11 @@
     int nounIndex = rand() % [randomNounList count];
     
     NSString *randomName = [NSString stringWithFormat:@"%@ %@",
-                [randomAdjectiveList objectAtIndex:adjectiveIndex],
-                [randomNounList objectAtIndex:nounIndex]];
-
+                            [randomAdjectiveList objectAtIndex:adjectiveIndex],
+                            [randomNounList objectAtIndex:nounIndex]];
+    
     int randomValue = rand() % 100;
-
+    
     NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
                                     '0' + rand() % 10,
                                     'A' + rand() % 26,
@@ -34,12 +36,12 @@
                                     'A' + rand() % 26,
                                     '0' + rand() % 10];
     
-    // Ignore the memory problems with this method
     Possession *newPossession = 
     [[self alloc] initWithPossessionName:randomName 
                           valueInDollars:randomValue 
                             serialNumber:randomSerialNumber];
-    return newPossession;
+    
+    return [newPossession autorelease];
 }
 
 - (id)initWithPossessionName:(NSString *)name 
@@ -77,52 +79,13 @@
                            serialNumber:@""];
 }
 
-- (void)setPossessionName:(NSString *)str
-{
-    possessionName = str;
-}
-
-- (NSString *)possessionName
-{
-    return possessionName;
-}
-
-- (void)setSerialNumber:(NSString *)str
-{
-    serialNumber = str;
-}
-
-- (NSString *)serialNumber
-{
-    return serialNumber;
-}
-
-- (void)setValueInDollars:(int)i
-{
-    valueInDollars = i;
-}
-
-- (int)valueInDollars
-{
-    return valueInDollars;
-}
-
-- (NSDate *)dateCreated
-{
-    return dateCreated;
-}
-
 - (NSString *)description
 {
-    NSString *descriptionString = 
-        [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
-                             possessionName, 
-                             serialNumber, 
-                             valueInDollars, 
-                             dateCreated];
-    // To those of you familiar with Objective-C and managing memory, don't panic Ð
-    // you will fix the problem with this code in the next chapter.
-    return descriptionString;
+    return [NSString stringWithFormat:@"%@ (%@): Worth $%d, Recorded on %@",
+            possessionName,
+            serialNumber,
+            valueInDollars,
+            dateCreated];
 }
 
 @end

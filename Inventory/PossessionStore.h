@@ -17,7 +17,10 @@
 
 + (PossessionStore *)defaultStore;
 
+- (void)removePossession:(Possession *)p;
 - (NSArray *)allPossessions;
 - (Possession *)createPossession;
+- (void)movePossessionAtIndex:(int)from toIndex:(int)to;
+
 
 @end
