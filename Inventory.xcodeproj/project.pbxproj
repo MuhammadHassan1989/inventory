@@ -25,6 +25,8 @@
 		F8E4D5E31431513200F301CB /* Possession.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4D5E21431513200F301CB /* Possession.m */; };
 		F8E4D5E7143151C400F301CB /* PossessionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4D5E6143151C400F301CB /* PossessionStore.m */; };
 		F8E4D5E914351DDA00F301CB /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E4D5E814351DDA00F301CB /* HeaderView.xib */; };
+		F8E4D5F2143A7D7600F301CB /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4D5F0143A7D7600F301CB /* ItemDetailViewController.m */; };
+		F8E4D5F3143A7D7600F301CB /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E4D5F1143A7D7600F301CB /* ItemDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		F8E4D5E5143151C400F301CB /* PossessionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PossessionStore.h; sourceTree = "<group>"; };
 		F8E4D5E6143151C400F301CB /* PossessionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PossessionStore.m; sourceTree = "<group>"; };
 		F8E4D5E814351DDA00F301CB /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		F8E4D5EF143A7D7600F301CB /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
+		F8E4D5F0143A7D7600F301CB /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		F8E4D5F1143A7D7600F301CB /* ItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +173,9 @@
 			children = (
 				F8E4D5D91431481E00F301CB /* ItemsViewController.h */,
 				F8E4D5DA1431481E00F301CB /* ItemsViewController.m */,
+				F8E4D5EF143A7D7600F301CB /* ItemDetailViewController.h */,
+				F8E4D5F0143A7D7600F301CB /* ItemDetailViewController.m */,
+				F8E4D5F1143A7D7600F301CB /* ItemDetailViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 				F8E4D5B01431453E00F301CB /* InfoPlist.strings in Resources */,
 				F8E4D5B91431453E00F301CB /* MainWindow.xib in Resources */,
 				F8E4D5E914351DDA00F301CB /* HeaderView.xib in Resources */,
+				F8E4D5F3143A7D7600F301CB /* ItemDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +310,7 @@
 				F8E4D5DB1431481E00F301CB /* ItemsViewController.m in Sources */,
 				F8E4D5E31431513200F301CB /* Possession.m in Sources */,
 				F8E4D5E7143151C400F301CB /* PossessionStore.m in Sources */,
+				F8E4D5F2143A7D7600F301CB /* ItemDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

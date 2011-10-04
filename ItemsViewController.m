@@ -17,51 +17,35 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStyleGrouped];
     
-    return self;
-}
-
-- (UIView *)headerView
-{
-    // If we haven't loaded the headerView yet...
-    if (!headerView) {
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+    if (self) {
+        // create a new bar button item that will send addNewPosession: to ItemsViewController
+        // set this bar button item as the right item in the navigationItem
+        // release the add button object
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewPossession:)];
+        [[self navigationItem] setRightBarButtonItem:addButton];
+        [addButton release];
+        
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
+        
+        // create a new bar button item to send toggleEditingMode: to IVC
+        // set this bar button item as the left item in the navigationItem
+        // release the edit button object
+        //UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEditingMode:)];
+        //[[self navigationItem] setLeftBarButtonItem:editButton];
+        //[editButton release];
+        
+        // set the title of the navigation item
+        [[self navigationItem] setTitle:@"Home Inventory"];
+        
     }
-    return headerView;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return [self headerView];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return [[self headerView] bounds].size.height;
+    
+    return self;
 }
 
 - (IBAction)addNewPossession:(id)sender
 {
     [[PossessionStore defaultStore] createPossession];
     [[self tableView] reloadData];
-}
-
-- (IBAction)toggleEditingMode:(id)sender
-{
-    // If we are currently in editing mode...
-    if ([self isEditing]) {
-        //NSLog(@"%d", [self isEditing]);
-        // change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        
-        // turn off editing mode
-        [self setEditing:NO animated:YES];
-    } else {
-        // change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        
-        // turn off editing mode
-        [self setEditing:YES animated:YES];    
-    }
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -117,6 +101,27 @@
 {
     [[PossessionStore defaultStore] movePossessionAtIndex:[fromIndexPath row] 
                                                   toIndex:[toIndexPath row]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Create an instance of ItemDetailViewController
+    ItemDetailViewController *dvc = [[[ItemDetailViewController alloc] init] autorelease];
+    
+    NSArray *possessions = [[PossessionStore defaultStore] allPossessions];
+    
+    // Give the detail view controller a pointer to the possession object in the selected row
+    [dvc setPossession:[possessions objectAtIndex:[indexPath row]]];
+    
+    // push the *dvc onto the top of the NavigationController's stack
+    [[self navigationController] pushViewController:dvc animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[self tableView] reloadData];
 }
 
 @end

@@ -18,12 +18,20 @@
     
     // Create a ItemsViewController
     ItemsViewController *ivc = [[ItemsViewController alloc] init];
+ 
+    // Create a UINavigationController and initialize with ItemsViewController as root view
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:ivc];
+    [ivc release];
+    
+    // Add UINavigationController to current window's view
+    [[self window] setRootViewController:nc];
+    [nc release];
     
     // Place ItemsViewController's table view in the window heirarchy
-    [[self window] setRootViewController:ivc];
+    //[[self window] setRootViewController:ivc];
     
     // Release the ItemsViewController
-    [ivc release];
+    //[ivc release];
     
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
