@@ -9,7 +9,7 @@
 #import "PossessionStore.h"
 #import "Possession.h"
 
-// create a global static variable to hole the instance of PossessionStore where the class can access it
+// create a global static variable to hold the instance of PossessionStore where the class can access it
 static PossessionStore *defaultStore = nil;
 
 @implementation PossessionStore

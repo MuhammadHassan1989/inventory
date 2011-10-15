@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F86F48151449C07C0042E41A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86F48141449C07C0042E41A /* CoreData.framework */; };
 		F8E4D5A61431453E00F301CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E4D5A51431453E00F301CB /* UIKit.framework */; };
 		F8E4D5A81431453E00F301CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E4D5A71431453E00F301CB /* Foundation.framework */; };
 		F8E4D5AA1431453E00F301CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E4D5A91431453E00F301CB /* CoreGraphics.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F86F48141449C07C0042E41A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F8E4D5A11431453E00F301CB /* Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E4D5A51431453E00F301CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8E4D5A71431453E00F301CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86F48151449C07C0042E41A /* CoreData.framework in Frameworks */,
 				F8E4D5A61431453E00F301CB /* UIKit.framework in Frameworks */,
 				F8E4D5A81431453E00F301CB /* Foundation.framework in Frameworks */,
 				F8E4D5AA1431453E00F301CB /* CoreGraphics.framework in Frameworks */,
@@ -99,6 +102,7 @@
 			children = (
 				F8E4D5EA14351DE200F301CB /* Views */,
 				F8E4D5DC1431482500F301CB /* Controllers */,
+				F8E4D5E41431513A00F301CB /* Models */,
 				F8E4D5AB1431453E00F301CB /* Inventory */,
 				F8E4D5C71431453E00F301CB /* InventoryTests */,
 				F8E4D5A41431453E00F301CB /* Frameworks */,
@@ -118,6 +122,7 @@
 		F8E4D5A41431453E00F301CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F86F48141449C07C0042E41A /* CoreData.framework */,
 				F8E4D5A51431453E00F301CB /* UIKit.framework */,
 				F8E4D5A71431453E00F301CB /* Foundation.framework */,
 				F8E4D5A91431453E00F301CB /* CoreGraphics.framework */,
@@ -129,7 +134,6 @@
 		F8E4D5AB1431453E00F301CB /* Inventory */ = {
 			isa = PBXGroup;
 			children = (
-				F8E4D5E41431513A00F301CB /* Models */,
 				F8E4D5B41431453E00F301CB /* InventoryAppDelegate.h */,
 				F8E4D5B51431453E00F301CB /* InventoryAppDelegate.m */,
 				F8E4D5B71431453E00F301CB /* MainWindow.xib */,
@@ -189,6 +193,7 @@
 				F8E4D5E6143151C400F301CB /* PossessionStore.m */,
 			);
 			name = Models;
+			path = Inventory;
 			sourceTree = "<group>";
 		};
 		F8E4D5EA14351DE200F301CB /* Views */ = {
@@ -478,6 +483,7 @@
 				F8E4D5D51431453E00F301CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8E4D5D61431453E00F301CB /* Build configuration list for PBXNativeTarget "InventoryTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +492,7 @@
 				F8E4D5D81431453E00F301CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
